@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="cards-container">
+    <header>
+      <h1>Ya' Books</h1>
+      <button class="add-btn">Add Book</button>
+    </header>
+  
+    <section class="book-collection">
+      <div class="book">
+        <p class="title">A book</p>
+        <p class="author">By an author</p>
+        <p class="pages">
+          pages: <span class="number-of-pages">69</span>
+        </p>
+        <button class="read book-button">Read</button>
+      </div>
+      <div class="book">
+        <p class="title">A book</p>
+        <p class="author">By an author</p>
+        <p class="pages">
+          pages: <span class="number-of-pages">69</span>
+        </p>
+        <button class="read book-button">Read</button>
+      </div>
+      <div class="book">
+        <p class="title">A book</p>
+        <p class="author">By an author</p>
+        <p class="pages">
+          pages: <span class="number-of-pages">69</span>
+        </p>
+        <button class="read book-button">Read</button>
+      </div>
+      <div class="book">
+        <p class="title">A book</p>
+        <p class="author">By an author</p>
+        <p class="pages">
+          pages: <span class="number-of-pages">69</span>
+        </p>
+        <button class="read book-button">Read</button>
+      </div>
+      <div class="book">
+        <p class="title">A book</p>
+        <p class="author">By an author</p>
+        <p class="pages">
+          pages: <span class="number-of-pages">69</span>
+        </p>
+        <button class="read book-button">Read</button>
+      </div>
+      <div class="book">
+        <p class="title">A book</p>
+        <p class="author">By an author</p>
+        <p class="pages">
+          pages: <span class="number-of-pages">69</span>
+        </p>
+        <button class="read book-button">Read</button>
+      </div>
+    </section>
+  </div>
+  <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+
+  <div class="form-container form-hide">
+    <form action="#" id="form" method="post" name="form" target="dummyframe" >
+      <h2>Add Book</h2>
+      <label for="title">Title</label>
+        <input type="text" name="title" id="title" placeholder="Title">
+      <label for="author">Author</label>
+      <input type="text" name="author" id="author" placeholder="Author">
+      <label for="pages">Pages</label>
+      <input type="number" name="pages" id="pages" placeholder="number">
+      <label>
+        Read?
+        <input type="checkbox" name="read" id="read">
+      </label>
+      <button type="submit" class="submit-btn">Add</button>
+      <button class="cancel-btn">Cancel</button>
+    </form>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
