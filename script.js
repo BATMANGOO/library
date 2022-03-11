@@ -10,6 +10,7 @@ let books = document.querySelector('.book-collection');
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
+  this.id = myLibrary.length + 1;
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -50,20 +51,16 @@ function displayBooks() {
       pages: <span class="number-of-pages">${input.pages}</span>
     </p>
     <button class="read book-button">${input.read ? 'Read' : 'Unread'}</button>
-    <button class="delete-btn" onCLick="deleteBook()">Delete</button>
+    <button class="delete-btn" onclick="deleteBook(this)">Delete</button>
     `
     books.appendChild(newCard);
-    console.log(books.children);
   });
-}
+};
 
-function deleteBook() { // Fix this
-  deleteBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    console.log(e.target.parentElement);
-  });
-}
-
+function deleteBook(elem) {
+  elem.parentElement.remove();
+};
+  
 addBtn.addEventListener('click', function(e) {
   formContainer.classList.remove('form-hide');
   appBody.classList.add('grey-out');
