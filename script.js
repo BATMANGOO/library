@@ -68,24 +68,25 @@ function createBook() {
     } else {
       // create book
       let book = document.createElement('div');
+      let bookTitle = document.createElement('h3');
+      let bookAuthor = document.createElement('p');
+      let bookPages = document.createElement('p');
+      let bookReadBtn = document.createElement('button');
+      let bookDeleteBtn = document.createElement('button');
+
       book.classList.add('book');
       book.setAttribute('id', `book-${myLibrary[i].id}`);
-      let bookTitle = document.createElement('h3');
       bookTitle.classList.add('title');
       bookTitle.innerText = `Title: ${myLibrary[i].title}`;
-      let bookAuthor = document.createElement('p');
       bookAuthor.classList.add('author');
       bookAuthor.innerText = `Author: ${myLibrary[i].author}`;
-      let bookPages = document.createElement('p');
       bookPages.classList.add('number-of-pages');
       bookPages.innerText = `${myLibrary[i].pages} pages`;
-      let bookReadBtn = document.createElement('button');
       bookReadBtn.innerText = myLibrary[i].read ? 'Read' : 'Unread';
       bookReadBtn.classList.add('book-button');
       bookReadBtn.addEventListener('click', function() {
         toggleRead(bookReadBtn);
       });
-      let bookDeleteBtn = document.createElement('button');
       bookDeleteBtn.innerText = 'Delete';
       bookDeleteBtn.classList.add('delete-btn');
       // add onclick attribute to bookDeleteBtn
@@ -96,6 +97,7 @@ function createBook() {
         myLibrary.splice(myLibrary.indexOf(book), 1);
         e.target.parentNode.remove();
       });
+      
       book.appendChild(bookTitle);
       book.appendChild(bookAuthor);
       book.appendChild(bookPages);
