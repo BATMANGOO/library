@@ -9,7 +9,7 @@ let readBtn = document.querySelector('.book-button');
 let books = document.querySelector('.book-collection');
 
 let myLibrary = [];
-
+// book constructor
 function Book(title, author, pages, read) {
   this.id = myLibrary.length + 1;
   this.title = title;
@@ -21,7 +21,7 @@ function Book(title, author, pages, read) {
 let aBook = new Book('A Book', 'An Author', 66, true);
 myLibrary.push(aBook);
 console.log(myLibrary)
-
+// toggle between read and unread for button
 function toggleRead(elem) {
   elem.innerText = elem.innerText === 'Read' ? 'Unread' : 'Read';
   console.log(elem)
@@ -34,7 +34,7 @@ function toggleRead(elem) {
     console.log('not found');
   }
 };
-
+// check if form info is valid
 function checkValidity(title, author, pages) {
   if ((title === '' || myLibrary.some(obj => obj.title == title)) || author === '' || pages === '') {
     return false;
@@ -42,7 +42,7 @@ function checkValidity(title, author, pages) {
     return true;
   }
 };
-
+// add the form data to the myLibrary array
 function addBookToLibrary() {
   let titleVal = form.elements.title.value;
   let authorVal = form.elements.author.value;
@@ -73,7 +73,7 @@ function createBook() {
       let bookPages = document.createElement('p');
       let bookReadBtn = document.createElement('button');
       let bookDeleteBtn = document.createElement('button');
-
+      // create the HTML elements for the book
       book.classList.add('book');
       book.setAttribute('id', `book-${myLibrary[i].id}`);
       bookTitle.classList.add('title');
