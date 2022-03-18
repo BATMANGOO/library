@@ -4,8 +4,6 @@ let addBtn = document.querySelector('.add-btn');
 let appBody = document.querySelector('.cards-container');
 let cancelBtn = document.querySelector('.cancel-btn');
 let submitBtn = document.querySelector('.submit-btn');
-let deleteBtn = document.querySelector('.delete-btn');
-let readBtn = document.querySelector('.book-button');
 let books = document.querySelector('.book-collection');
 
 let myLibrary = [];
