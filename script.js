@@ -36,7 +36,6 @@ class Book {
         read: this.read
       });
       form.reset();
-      console.log(myLibrary);
       this.createBook();
     } else {
       alert('Please fill in all fields');
