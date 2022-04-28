@@ -24,7 +24,7 @@ header {
   background-color: #000;
 }
 
-header > button {
+header>button {
   position: absolute;
   top: 0;
   right: 0;
@@ -46,7 +46,7 @@ form {
   background-color: lightblue;
 }
 
-form > button {
+form>button {
   width: 100px;
 }
 
@@ -101,3 +101,16 @@ form > button {
   cursor: pointer;
 }
 
+/* form validation styles */
+#title:invalid,
+#author:invalid,
+#pages:invalid {
+  border: 3px solid red;
+}
+
+
+#title:valid, 
+#author:valid,
+#pages:valid {
+  border: 3px solid green;
+}

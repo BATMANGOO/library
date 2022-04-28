@@ -1,10 +1,13 @@
-let form = document.querySelector('form');
-let formContainer = document.querySelector('.form-container');
-let addBtn = document.querySelector('.add-btn');
-let appBody = document.querySelector('.cards-container');
-let cancelBtn = document.querySelector('.cancel-btn');
-let submitBtn = document.querySelector('.submit-btn');
-let books = document.querySelector('.book-collection');
+const form = document.querySelector('form');
+const formContainer = document.querySelector('.form-container');
+const addBtn = document.querySelector('.add-btn');
+const appBody = document.querySelector('.cards-container');
+const cancelBtn = document.querySelector('.cancel-btn');
+const submitBtn = document.querySelector('.submit-btn');
+const books = document.querySelector('.book-collection');
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+const pages = document.querySelector('#pages');
 
 let myLibrary = [];
 
@@ -125,6 +128,36 @@ submitBtn.addEventListener('click', function (e) {
 
   formContainer.classList.add('form-hide');
   appBody.classList.remove('grey-out');
+});
+
+title.addEventListener('input', e => {
+  if (title.value.length === 0) {
+    title.setCustomValidity('Please enter a title');
+    title.reportValidity();
+  } else {
+    title.setCustomValidity('');
+  }
+});
+
+author.addEventListener('input', e => {
+  if (author.value.length === 0) {
+    author.setCustomValidity('Please enter an author');
+    author.reportValidity();
+  } else {
+    author.setCustomValidity('');
+  }
+});
+
+pages.addEventListener('input', e => {
+  if (pages.validity.typeMismatch) {
+    pages.setCustomValidity('Please enter a number');
+    pages.reportValidity();
+  } else if (pages.value <= '0') {
+    pages.setCustomValidity('Please enter a number greater than 0');
+    pages.reportValidity();
+  } else {
+    pages.setCustomValidity('');
+  }
 });
 
 let aBook = new Book('The Hobbit', 'J.R.R. Tolkien', 295, true);
